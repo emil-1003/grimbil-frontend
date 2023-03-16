@@ -26,16 +26,16 @@
             <div class={`${isMenuOpen ? 'block' : 'hidden'} md:flex md:items-center w-full md:w-auto`} id="navbar-default">
                 <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white">
                     <li on:click={() => (isMenuOpen = false)}>
-                        <a href="/posts" on:click={() => (current = 0)} class={`${current === 0 ? 'text-blue-700' : 'text-gray-700'} block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Posts</a>
+                        <a href="/posts" on:click={() => (current = 0)} class={`${current === 0 ? 'text-blue-700' : 'text-gray-700'} font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Posts</a>
                     </li>
                     <li on:click={() => (isMenuOpen = false)}>
-                        <a href="/about" on:click={() => (current = 1)} class={`${current === 1 ? 'text-blue-700' : 'text-gray-700'} block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>About</a>
+                        <a href="/about" on:click={() => (current = 1)} class={`${current === 1 ? 'text-blue-700' : 'text-gray-700'} font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>About</a>
                     </li>
                     <li on:click={() => (isMenuOpen = false)}>
-                        <a href="/login" on:click={() => (current = 2)} class={`${current === 2 ? 'text-blue-700' : 'text-gray-700'} block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Login</a>
+                        <a href="/login" on:click={() => (current = 2)} class={`${current === 2 ? 'text-blue-700' : 'text-gray-700'} font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Login</a>
                     </li>
                     <li on:click={() => (isMenuOpen = false)}>
-                        <a href="/signup" on:click={() => (current = 3)} class={`${current === 3 ? 'text-blue-700' : 'text-gray-700'} block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Signup</a>
+                        <a href="/signup" on:click={() => (current = 3)} class={`${current === 3 ? 'text-blue-700' : 'text-gray-700'} font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Signup</a>
                     </li>
                 </ul>
             </div>
