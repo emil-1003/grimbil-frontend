@@ -48,14 +48,14 @@
                     <div class="mt-6">
                         <h3 class="sr-only">Votes/Comments</h3>
                         <div class="flex items-center">
-       <div class="flex items-center">
-    <!-- Active: "text-gray-900", Default: "text-gray-200" -->
-    🤮
-    🤮
-    🤮
-    🤮
-    ⚪️
-  </div>
+                            <div class="flex items-center">
+                            <!-- Active: "text-gray-900", Default: "text-gray-200" -->
+                            🤮
+                            🤮
+                            🤮
+                            🤮
+                            ⚪️
+                        </div>
                             <p class="sr-only">4 out of 5 stars</p>
                             <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
                         </div>
