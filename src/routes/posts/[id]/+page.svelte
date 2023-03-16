@@ -59,6 +59,53 @@
                             <p class="sr-only">4 out of 5 stars</p>
                             <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
                         </div>
+
+                        <div class="mt-4 mb-4 bg-white shadow overflow-hidden sm:rounded-md">
+                            <div class="px-4 py-5 sm:px-6">
+                              <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                Emil
+                              </h3>
+                              <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                                10.10.2002
+                              </p>
+                            </div>
+                            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                              <dl class="sm:divide-y sm:divide-gray-200">
+                                <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                  <dt class="text-sm font-medium text-gray-500">
+                                    Comment:
+                                  </dt>
+                                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsa eaque cum magnam iure asperiores a nesciunt voluptates exercitationem odit?
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+
+                          <div class="mt-4 mb-4 bg-white shadow overflow-hidden sm:rounded-md">
+                            <div class="px-4 py-5 sm:px-6">
+                              <h3 class="text-lg leading-6 font-medium text-gray-900">
+                                Emil
+                              </h3>
+                              <p class="mt-1 max-w-2xl text-sm text-gray-500">
+                                10.10.2002
+                              </p>
+                            </div>
+                            <div class="border-t border-gray-200 px-4 py-5 sm:p-0">
+                              <dl class="sm:divide-y sm:divide-gray-200">
+                                <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                                  <dt class="text-sm font-medium text-gray-500">
+                                    Comment:
+                                  </dt>
+                                  <dd class="mt-1 text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsa eaque cum magnam iure asperiores a nesciunt voluptates exercitationem odit?
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+                          
                     </div>
                 </div>
         
@@ -75,7 +122,7 @@
                         <h3 class="text-sm font-medium text-gray-900">Stats/specs</h3>
             
                         <div class="mt-4">
-                            <ul role="list" class="list-disc space-y-2 pl-4 text-sm">
+                            <ul class="list-disc space-y-2 pl-4 text-sm">
                                 <li class="text-gray-400"><span class="text-gray-600">120 HK</span></li>
                                 <li class="text-gray-400"><span class="text-gray-600">105 NM</span></li>
                                 <li class="text-gray-400"><span class="text-gray-600">24,4 km/l</span></li>
