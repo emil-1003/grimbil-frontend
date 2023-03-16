@@ -15,7 +15,7 @@
 <header>
     <nav class="bg-gray-900 px-2 sm:px-4 py-2.5">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
-            <a href="/" class="flex items-center">
+            <a href="/" on:click={() => (isMenuOpen = false)} class="flex items-center">
                 <img src="/white-car-30.png" class="h-6 mr-3 sm:h-9" alt="logo">
                 <span class="text-white self-center text-xl font-semibold whitespace-nowrap">Grimbil</span>
             </a>
