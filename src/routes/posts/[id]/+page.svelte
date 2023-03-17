@@ -7,8 +7,15 @@
     import PostDescription from '$lib/postdescription.svelte';
     export let data
 
+    let jwtExists = false;
     let post = {};
     onMount(async () => {
+        const cookies = document.cookie.split('; ');
+        jwtExists = cookies.some(cookie => cookie.startsWith('jwt='));
+		if (!jwtExists) {
+			window.location.href = "/";
+		}
+
         const id = data.params.id
         const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
 		post = await res.json();
