@@ -8,7 +8,7 @@
 
         if (emailInput.value === "email@email.com" && passwordInput.value === "1234") {
             // Create the cookie
-            const tokenString = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
+            const tokenString = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6IkVtaWwiLCJyb2xlIjoiYWRtaW4iLCJleHAiOjE2NzkxMzU5ODIsImlzcyI6Im15LXdlYnNpdGUuY29tIn0.HHyjGqRuiNy9kce401aEgvwUAPXdjnvc_B_uqJVgJoo";
             const expires = new Date(Date.now() + 10 * 60 * 1000).toUTCString();
             const cookie = `jwt=${tokenString}; expires=${expires};`;
 
