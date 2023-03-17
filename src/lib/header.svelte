@@ -5,7 +5,6 @@
 
     function toggleMenu() {
         isMenuOpen = !isMenuOpen;
-        console.log(current)
     }
 
     let current = 0

@@ -3,8 +3,6 @@
         event.preventDefault();
         const emailInput = event.target.querySelector("#email");
         const passwordInput = event.target.querySelector("#password");
-        console.log(emailInput.value)
-        console.log(passwordInput.value)
 
         if (emailInput.value === "email@email.com" && passwordInput.value === "1234") {
             // Create the cookie
