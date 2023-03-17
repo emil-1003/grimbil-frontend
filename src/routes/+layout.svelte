@@ -37,7 +37,7 @@
 </script>
 
 <Header isAuthorized={jwtExists}/>
-  
+
 <main>
     <!-- page content -->
     <slot />
