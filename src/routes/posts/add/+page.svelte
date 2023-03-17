@@ -1,5 +1,16 @@
 <script>
     import PostForm from "$lib/postform.svelte"
+    import { onMount } from 'svelte';
+
+	let jwtExists = false;
+	onMount(async () => {
+		const cookies = document.cookie.split('; ');
+        jwtExists = cookies.some(cookie => cookie.startsWith('jwt='));
+		if (!jwtExists) {
+			window.location.href = "/";
+		}
+	});
+
 </script>
 
 <div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">

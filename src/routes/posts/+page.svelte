@@ -2,8 +2,15 @@
 	import { onMount } from 'svelte';
 	import Post from "$lib/post.svelte"
 
+	let jwtExists = false;
 	let posts = [];
 	onMount(async () => {
+		const cookies = document.cookie.split('; ');
+        jwtExists = cookies.some(cookie => cookie.startsWith('jwt='));
+		if (!jwtExists) {
+			window.location.href = "/";
+		}
+
         const res = await fetch(`https://jsonplaceholder.typicode.com/photos`);
 		const data = await res.json();
         posts = data.slice(0,12)
