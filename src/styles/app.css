@@ -5,3 +5,7 @@
 body {
     margin-bottom: 5em;
 }
+
+.error {
+    color: red;
+}

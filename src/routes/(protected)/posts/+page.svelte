@@ -1,21 +1,7 @@
 <script>
-	import { onMount } from 'svelte';
 	import Post from "$lib/post.svelte"
 
-	let jwtExists = false;
-	let posts = [];
-	onMount(async () => {
-		const cookies = document.cookie.split('; ');
-        jwtExists = cookies.some(cookie => cookie.startsWith('jwt='));
-		if (!jwtExists) {
-			window.location.href = "/";
-		}
-
-        const res = await fetch(`https://jsonplaceholder.typicode.com/photos`);
-		const data = await res.json();
-        posts = data.slice(0,12)
-	});
-
+	export let data;
 </script>
 
 <div class="bg-white">
@@ -30,7 +16,7 @@
 			</a>
 		</div>
 		<div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">      
-			{#each posts as post}
+			{#each data.posts as post}
 				<Post id={post.id} title={post.title}/>
 			{:else}
 				<!-- this block renders when posts.length === 0 -->

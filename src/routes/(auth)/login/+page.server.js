@@ -1,0 +1,54 @@
+import { fail, redirect } from '@sveltejs/kit'
+
+export const load = async ({ locals }) => {
+	// redirect user if logged in
+	if (locals.user) {
+		throw redirect(302, '/')
+	}
+}
+
+const login = async ({ cookies, request }) => {
+	const data = await request.formData()
+	const username = data.get('username')
+	const password = data.get('password')
+
+	if (typeof username !== 'string' || typeof password !== 'string' || !username || !password) {
+		return fail(400, { invalid: true })
+	}
+
+	// MAKE POST LOGIN REQUEST
+	const response = await fetch('http://localhost:8585/api/v1/login', {
+		method: 'POST',
+		headers: {
+		  'Content-Type': 'application/json'
+		},
+		body: JSON.stringify({ email: username, password: password })
+	});
+	
+	if (!response.ok) {
+		console.log(response.status)
+		return fail(400, { credentials: true });
+	}
+
+	// get response text
+	const token = await response.text();
+
+	cookies.set('jwt', token/*authenticatedUser.userAuthToken*/, {
+		// send cookie for every page
+		path: '/',
+		// server side only cookie so you can't use `document.cookie`
+		httpOnly: true,
+		// only requests from same site can send cookies
+		// https://developer.mozilla.org/en-US/docs/Glossary/CSRF
+		sameSite: 'strict',
+		// only sent over HTTPS in production
+		secure: process.env.NODE_ENV === 'production',
+		// set cookie to expire after a month
+		maxAge: 60 * 60 * 24 * 30,
+	})
+
+	// redirect the user
+	throw redirect(302, '/')
+}
+
+export const actions/*: Actions*/ = { login }
