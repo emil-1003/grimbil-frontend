@@ -9,10 +9,10 @@ export const load = async ({ locals }) => {
 
 const login = async ({ cookies, request }) => {
 	const data = await request.formData()
-	const username = data.get('username')
+	const email = data.get('email')
 	const password = data.get('password')
 
-	if (typeof username !== 'string' || typeof password !== 'string' || !username || !password) {
+	if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {
 		return fail(400, { invalid: true })
 	}
 
@@ -22,7 +22,7 @@ const login = async ({ cookies, request }) => {
 		headers: {
 		  'Content-Type': 'application/json'
 		},
-		body: JSON.stringify({ email: username, password: password })
+		body: JSON.stringify({ email: email, password: password })
 	});
 	
 	if (!response.ok) {

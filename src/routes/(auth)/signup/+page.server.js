@@ -9,11 +9,18 @@ export const load = async ({ locals }) => {
 
 const signup = async ({ request }) => {
 	const data = await request.formData()
-	const username = data.get('username')
+	const email = data.get('email')
 	const password = data.get('password')
+	const repeatPassword = data.get('repeat-password')
 
-	if (typeof username !== 'string' || typeof password !== 'string' || !username || !password) {
-		return fail(400, { invalid: true })
+	console.log(repeatPassword)
+
+	if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {
+		return fail(400, { invalid: true });
+	}
+
+	if (password !== repeatPassword) {
+		return fail(400, { pwdMatch: true });
 	}
 
 	// MAKE POST SIGNUP REQUEST
@@ -22,7 +29,7 @@ const signup = async ({ request }) => {
 		headers: {
 		  'Content-Type': 'application/json'
 		},
-		body: JSON.stringify({ name: username, email: username, password: password })
+		body: JSON.stringify({ name: email, email: email, password: password })
 	});
 	
 	if (!response.ok) {
