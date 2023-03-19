@@ -33,7 +33,7 @@ const login = async ({ cookies, request }) => {
 	// get response text
 	const token = await response.text();
 
-	cookies.set('jwt', token/*authenticatedUser.userAuthToken*/, {
+	cookies.set('jwt', token, {
 		// send cookie for every page
 		path: '/',
 		// server side only cookie so you can't use `document.cookie`
@@ -51,4 +51,4 @@ const login = async ({ cookies, request }) => {
 	throw redirect(302, '/')
 }
 
-export const actions/*: Actions*/ = { login }
+export const actions = { login }

@@ -55,7 +55,6 @@
                     <div class="mt-6">
                         <div class="flex items-center">
                             <div class="flex items-center">
-                            <!-- Active: "text-gray-900", Default: "text-gray-200" -->
                             🤮
                             🤮
                             🤮
