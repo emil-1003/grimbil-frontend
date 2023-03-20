@@ -1,16 +1,3 @@
-<script context="module">
-    export function load({ error }) {
-        return {
-            props: { message: error.message }
-        };
-    }
-</script>
-
-<script>
-    export let message
-</script>
-
-
 <div class="relative h-screen overflow-hidden bg-indigo-900">
     <img src="/cars/fiat.jpeg" class="absolute object-cover w-full h-full"/>
     <div class="absolute inset-0 bg-black opacity-25">
