@@ -10,20 +10,19 @@
     export let message
 </script>
 
-<div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-	<div class="w-full max-w-md space-y-8 bg-gray-50 border border-gray-300 p-6 rounded-lg">
 
-        <section class="flex items-center h-full p-16 dark:bg-gray-900 dark:text-gray-100">
-            <div class="container flex flex-col items-center justify-center px-5 mx-auto my-8">
-                <div class="max-w-md text-center">
-                    <h2 class="mb-8 font-extrabold text-9xl dark:text-gray-600">
-                        <span class="sr-only">Error</span>404
-                    </h2>
-                    <p class="text-2xl font-semibold md:text-3xl">Sorry, we couldn't find this page.</p>
-                    <a rel="noopener noreferrer" href="/" class="px-8 py-3 text-blue-700 font-semibold rounded">Back to homepage</a>
-                </div>
-            </div>
-        </section>
-
+<div class="relative h-screen overflow-hidden bg-indigo-900">
+    <img src="/cars/fiat.jpeg" class="absolute object-cover w-full h-full"/>
+    <div class="absolute inset-0 bg-black opacity-25">
+    </div>
+    <div class="container relative z-10 flex items-center px-6 py-32 mx-auto md:px-12 xl:py-40">
+        <div class="relative z-10 flex flex-col items-center w-full font-mono">
+            <h1 class="mt-4 text-5xl font-extrabold leading-tight text-center text-white">
+                You&#x27;re alone here
+            </h1>
+            <p class="font-extrabold text-white text-8xl my-44 animate-bounce">
+                404
+            </p>
+        </div>
     </div>
 </div>
