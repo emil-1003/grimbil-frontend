@@ -64,40 +64,41 @@
                             <a href="#" class="ml-3 text-sm font-medium text-indigo-600 hover:text-indigo-500">117 reviews</a>
                         </div>
 
-                        <Comment name="Emil" date="10.10.2002" comment="Det er da den grimmeste bil jeg længe har set!!" />
-                        <Comment name="Jens" date="10.11.2002" comment="Så grim er den sgu da heller ikke!" />
-
                         <div class="mt-4 mb-4 bg-white shadow overflow-hidden sm:rounded-md">
                             <div class="px-4 py-5 sm:px-6">
                                 <form
-                            action="?/comment"
-                            method="POST"
-                            use:enhance={() => {
-                                return async ({ result }) => {
-                                    // rerun the `load` function for the page
-                                    // https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
-                                    invalidateAll()
-                    
-                                    // since we're customizing the default behaviour
-                                    // we don't want to reimplement what `use:enhance` does
-                                    // so we can use `applyResult` and pass the `result`
-                                    await applyAction(result)
-                                }
-                            }}
-                            >
-                                <div class="mb-6">
-                                    <label for="comment" class="block mb-2 text-sm font-medium text-gray-900">Write a comment</label>
-                                    <textarea id="comment" name="comment" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Write a comment" required />
-                                </div>
-                                    
-                                <div>
-                                    <button type="submit" class="group relative flex w-full justify-center rounded-md bg-blue-700 py-2 px-3 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
-                                        Send
-                                    </button>
-                                </div>
-                            </form>
+                                action="?/comment"
+                                method="POST"
+                                use:enhance={() => {
+                                    return async ({ result }) => {
+                                        // rerun the `load` function for the page
+                                        // https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
+                                        invalidateAll()
+                        
+                                        // since we're customizing the default behaviour
+                                        // we don't want to reimplement what `use:enhance` does
+                                        // so we can use `applyResult` and pass the `result`
+                                        await applyAction(result)
+                                    }
+                                }}
+                                >
+                                    <div class="mb-6">
+                                        <label for="comment" class="block mb-2 text-sm font-medium text-gray-900">Write a comment</label>
+                                        <textarea id="comment" name="comment" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Write a comment" required />
+                                    </div>
+                                        
+                                    <div>
+                                        <button type="submit" class="group relative flex w-full justify-center rounded-md bg-blue-700 py-2 px-3 text-sm font-semibold text-white hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                                            Send
+                                        </button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
+
+                        <Comment name="Emil" date="10.10.2002" comment="Det er da den grimmeste bil jeg længe har set!!" />
+                        <Comment name="Jens" date="10.11.2002" comment="Så grim er den sgu da heller ikke!" />
+
                     </div>
                 </div>
         

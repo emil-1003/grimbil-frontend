@@ -43,7 +43,7 @@ const login = async ({ cookies, request }) => {
 		sameSite: 'strict',
 		// only sent over HTTPS in production
 		secure: process.env.NODE_ENV === 'production',
-		// set cookie to expire after a month
+		// set cookie to expire after 10min
 		maxAge: 60 * 10,
 	})
 

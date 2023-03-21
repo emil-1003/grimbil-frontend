@@ -11,10 +11,11 @@ export const actions = {
 		// eat the cookie
 		cookies.set('jwt', '', {
 			path: '/',
-			expires: new Date(0),
+			httpOnly: true,
+			//expires: new Date(Date.now() - 3600000), // new Date(0)
+			maxAge: 0,
+			secure: process.env.NODE_ENV === 'production',
 		})
-
-		console.log("eat cookie")
 
 		// redirect the user
 		throw redirect(302, '/login')
