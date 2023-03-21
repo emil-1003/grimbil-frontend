@@ -45,6 +45,7 @@ const login = async ({ cookies, request }) => {
 		secure: process.env.NODE_ENV === 'production',
 		// set cookie to expire after a month
 		maxAge: 60 * 10,
+		domain: "home.storgaardandersen.dk,"
 	})
 
 	// redirect the user

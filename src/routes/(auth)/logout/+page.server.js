@@ -11,6 +11,7 @@ export const actions = {
 		// eat the cookie
 		cookies.set('jwt', '', {
 			path: '/',
+			domain: "home.storgaardandersen.dk",
 			expires: new Date(0),
 		})
 
