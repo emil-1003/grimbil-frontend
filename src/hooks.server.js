@@ -35,17 +35,21 @@ export const handle = async ({ event, resolve }) => {
 
 	try {
 		// VALIDATE JWT TOKEN
-		const decodedToken = jwt.verify(token, 'my-secret-key');
+		const decodedToken = jwt.verify(token, 'MySecretKeyThatIsALongStringWithSomeRandomCharactersThatMakesNoSenseUnlessYouAreReallyBored');
 	
 		// GET CLAIMS FROM JWT TOKEN
-		const { uid, role } = decodedToken;
+		const { userEmail, userType, userId } = decodedToken;
+	
 		// if `user` exists set `events.local`
-		if (uid && role) {
+		if (userEmail && userType) {
 			event.locals.user = {
-			name: uid,
-			role: role,
+			name: userEmail,
+			uid: userId,
+			role: userType,
+			jwt: token,
 			}
 		}
+
 		// load page as normal
 		return await resolve(event)
 

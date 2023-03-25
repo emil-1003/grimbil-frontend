@@ -13,8 +13,6 @@ const signup = async ({ request }) => {
 	const password = data.get('password')
 	const repeatPassword = data.get('repeat-password')
 
-	console.log(repeatPassword)
-
 	if (typeof email !== 'string' || typeof password !== 'string' || !email || !password) {
 		return fail(400, { invalid: true });
 	}
@@ -24,12 +22,12 @@ const signup = async ({ request }) => {
 	}
 
 	// MAKE POST SIGNUP REQUEST
-	const response = await fetch('http://localhost:8585/api/v1/signup', {
+	const response = await fetch('http://localhost:5036/User/Create', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
 		},
-		body: JSON.stringify({ name: email, email: email, password: password })
+		body: JSON.stringify({ userEmail: email, password: password })
 	});
 	
 	if (!response.ok) {

@@ -17,23 +17,22 @@ const login = async ({ cookies, request }) => {
 	}
 
 	// MAKE POST LOGIN REQUEST
-	const response = await fetch('http://localhost:8585/api/v1/login', {
+	const response = await fetch('http://localhost:5036/Auth/Login', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
 		},
-		body: JSON.stringify({ email: email, password: password })
+		body: JSON.stringify({ userEmail: email, password: password })
 	});
 	
 	if (!response.ok) {
-		console.log(response.status)
 		return fail(400, { credentials: true });
 	}
 
 	// get response text
-	const token = await response.text();
+	const token = await response.json();
 
-	cookies.set('jwt', token, {
+	cookies.set('jwt', token[0], {
 		// send cookie for every page
 		path: '/',
 		// server side only cookie so you can't use `document.cookie`
@@ -43,8 +42,8 @@ const login = async ({ cookies, request }) => {
 		sameSite: 'strict',
 		// only sent over HTTPS in production
 		secure: process.env.NODE_ENV === 'production',
-		// set cookie to expire after 10min
-		maxAge: 60 * 10,
+		// set cookie to expire after 60min
+		maxAge: 60 * 60,
 	})
 
 	// redirect the user

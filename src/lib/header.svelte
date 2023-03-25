@@ -10,7 +10,6 @@
     }
 
     let current = 0
-
 </script>
 
 <header>
@@ -46,9 +45,11 @@
                     {/if}
             
                     {#if $page.data.user}
+                        {#if $page.data.user.role == 1}
                         <li on:click={() => (isMenuOpen = false)}>
                             <a href="/admin" on:click={() => (current = 4)} class={`${current === 4 ? 'text-blue-700' : 'text-gray-700'} font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Admin</a>
                         </li>
+                        {/if}
                         <li on:click={() => (isMenuOpen = false)}>
                             <a href="/posts" on:click={() => (current = 5)} class={`${current === 5 ? 'text-blue-700' : 'text-gray-700'} font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Posts</a>
                         </li>

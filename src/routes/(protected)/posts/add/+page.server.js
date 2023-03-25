@@ -1,4 +1,4 @@
-import { redirect } from '@sveltejs/kit'
+import { fail, redirect } from '@sveltejs/kit'
 
 export const load = async ({ locals }) => {
 	// redirect user if not logged in
@@ -7,7 +7,7 @@ export const load = async ({ locals }) => {
 	}
 }
 
-const create = async ({ request }) => {
+const create = async ({ request, locals }) => {
 	const data = await request.formData()
 	const make = data.get('make')
 	const model = data.get('model')
@@ -16,10 +16,30 @@ const create = async ({ request }) => {
 	const hp = data.get('hp')
 	const plate = data.get('plate')
 	const description = data.get('description')
-	const images = data.get('multiple_files')
+	const base64 = data.get('base64')
 
-	console.log(make, model, year, mileage, hp, plate, description, images)
+	const base64Arr = base64.split("data:image/jpeg;base64,");
+	base64Arr.shift(); // remove the first empty element from the array
 
+	const title = `${make} ${model} ${year} ${mileage} ${hp} ${plate}`
+	const content = `${description}`
+
+	// MAKE POST CREATE POST REQUEST
+	const response = await fetch('http://localhost:5036/Posts/CreatePost', {
+		method: 'POST',
+		headers: {
+			'Content-Type': 'application/json',
+			'Authorization': `Bearer ${locals.user.jwt}`
+		},
+		body: JSON.stringify({ title: title, content: content, pictures: base64Arr })
+	});
+	
+	if (!response.ok) {
+		console.log(response.status)
+		return fail(400, { error: true });
+	}
+
+	console.log("redirect to /posts")
 	// redirect the user
 	throw redirect(302, '/posts')
 }
