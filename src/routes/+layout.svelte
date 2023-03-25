@@ -16,7 +16,7 @@
     <slot />
 </main>
 
-<Footer />
+<Footer year="2023" name="Grimbil.dk" text="Alexander Olsen - Emil Andersen" />
 
 <style>
 

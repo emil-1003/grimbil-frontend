@@ -39,7 +39,6 @@ const create = async ({ request, locals }) => {
 		return fail(400, { error: true });
 	}
 
-	console.log("redirect to /posts")
 	// redirect the user
 	throw redirect(302, '/posts')
 }

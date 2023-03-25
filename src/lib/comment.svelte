@@ -1,13 +1,13 @@
 <script>
-    export let name = "Emil"
-    export let date = "12.34.5678"
-    export let comment = "Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti ipsa eaque cum magnam iure asperiores a nesciunt voluptates exercitationem odit?"
+	export let name = "No Name"
+	export let date = "No Date"
+	export let comment = "No Comment"
 </script>
 
 <div class="mt-4 mb-4 bg-white shadow overflow-hidden sm:rounded-md">
     <div class="px-4 py-5 sm:px-6">
       <h3 class="text-lg leading-6 font-medium text-gray-900">
-        {name} - 🤮
+        {name}
       </h3>
       <p class="mt-1 max-w-2xl text-sm text-gray-500">
         {date}
@@ -25,7 +25,7 @@
         </div>
       </dl>
     </div>
-  </div>
+</div>
 
 <style>
     

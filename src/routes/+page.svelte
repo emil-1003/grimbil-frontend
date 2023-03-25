@@ -4,23 +4,6 @@
     export let data
 </script>
 
-<!--
-    use:enhance={() => {
-        return async ({ result }) => {
-            // rerun the `load` function for the page
-            // https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
-            invalidateAll()
-
-            // since we're customizing the default behaviour
-            // we don't want to reimplement what `use:enhance` does
-            // so we can use `applyResult` and pass the `result`
-            await applyAction(result)
-        }
-    }}
-
-    use:enhance
--->
-
 <div class="bg-white">
     <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="flex items-center justify-between">
@@ -37,23 +20,23 @@
 
         <div class="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">      
         {#each data.posts as post}
-            <div class="group relative">
-                <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
-                    <img src="data:image/jpeg;base64,{post.pictures[0]}" alt="Car." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
-                </div>
-                <div class="mt-4 flex justify-between">
-                    <div>
-                        <h3 class="text-sm text-gray-700">
-                            <a href="/posts/{post.Postid}">
-                                <span aria-hidden="true" class="absolute inset-0"></span>
-                                {post.Title}
-                            </a>
-                        </h3>
-                        <p class="mt-1 text-sm text-gray-500">{post.User.Useremail}</p>
-                    </div>
-                    <p class="text-sm font-medium text-gray-900">{post.rating} 🤮</p>
-                </div>
+        <div class="group relative">
+            <div class="min-h-80 aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-80">
+                <img src="data:image/jpeg;base64,{post.pictures[0]}" alt="Car." class="h-full w-full object-cover object-center lg:h-full lg:w-full">
             </div>
+            <div class="mt-4 flex justify-between">
+                <div>
+                    <h3 class="text-sm text-gray-700">
+                        <a href="/posts/{post.Postid}">
+                            <span aria-hidden="true" class="absolute inset-0"></span>
+                            {post.Title}
+                        </a>
+                    </h3>
+                    <p class="mt-1 text-sm text-gray-500">{post.User.Useremail}</p>
+                </div>
+                <p class="text-sm font-medium text-gray-900">{post.rating} 🤮</p>
+            </div>
+        </div>
         {:else}
             <!-- this block renders when posts.length === 0 -->
             <p>You have no active posts</p>
