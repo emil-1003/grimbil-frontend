@@ -25,7 +25,7 @@ const create = async ({ request, locals }) => {
 	const content = `${description}`
 
 	// MAKE POST CREATE POST REQUEST
-	const response = await fetch('http://localhost:5036/Posts/CreatePost', {
+	const response = await fetch('http://78.31.254.83:40080/Posts/CreatePost', {
 		method: 'POST',
 		headers: {
 			'Content-Type': 'application/json',

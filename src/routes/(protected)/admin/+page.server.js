@@ -9,7 +9,7 @@ export const load = async ({ locals }) => {
 
 	let users = [];
   
-	const res = await fetch('http://localhost:5036/User/GetAllUsers', {
+	const res = await fetch('http://78.31.254.83:40080/User/GetAllUsers', {
 		method: 'GET',
 		headers: {
 		  'Content-Type': 'application/json',
@@ -29,7 +29,7 @@ const deleteuser = async ({ request, locals }) => {
 	const userid = data.get('userid')
 
 	// MAKE DELTE USER REQUEST
-	const response = await fetch(`http://localhost:5036/User/DeleteUser?userId=${userid}`, {
+	const response = await fetch(`http://78.31.254.83:40080/User/DeleteUser?userId=${userid}`, {
 		method: 'DELETE',
 		headers: {
 		  'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const blockuser = async ({ request, locals }) => {
 	const userid = data.get('userid')
 
 	// MAKE BLOCK USER REQUEST
-	const response = await fetch(`http://localhost:5036/User/BlockUser?userid=${userid}`, {
+	const response = await fetch(`http://78.31.254.83:40080/User/BlockUser?userid=${userid}`, {
 		method: 'GET',
 		headers: {
 		  'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const unblockuser = async ({ request, locals }) => {
 	const userid = data.get('userid')
 
 	// MAKE BLOCK USER REQUEST
-	const response = await fetch(`http://localhost:5036/User/UnblockUser?userid=${userid}`, {
+	const response = await fetch(`http://78.31.254.83:40080/User/UnblockUser?userid=${userid}`, {
 		method: 'GET',
 		headers: {
 		  'Content-Type': 'application/json',

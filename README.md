@@ -51,3 +51,12 @@ You can preview the production build with `npm run preview`.
 ```bash
 npm install jsonwebtoken
 ```
+
+## Docker
+```bash
+# Build
+$ sudo docker build --no-cache -t grimbil-frontend:latest .
+
+# Run
+$ sudo docker run -d --name grimbil-frontend -p 3000:3000 grimbil-frontend:latest
+```

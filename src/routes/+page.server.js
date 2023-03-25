@@ -1,7 +1,7 @@
 export const load = async () => {
   let posts = [];
 
-  const res = await fetch(`http://localhost:5036/Posts/AllPosts`);
+  const res = await fetch(`http://78.31.254.83:40080/Posts/AllPosts`);
   posts = await res.json()
 
   return {

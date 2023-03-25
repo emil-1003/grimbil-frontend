@@ -10,7 +10,7 @@ export const load = async ({ params, locals }) => {
     const id = params.id
 
     try {
-        const res = await fetch(`http://localhost:5036/Posts/GetPost?postid=${id}`);
+        const res = await fetch(`http://78.31.254.83:40080/Posts/GetPost?postid=${id}`);
         post = await res.json();
 
         return {
@@ -27,7 +27,7 @@ const comment = async ({ request, params, locals }) => {
 	const id = params.id
 
 	// MAKE POST COMMENT REQUEST
-	const response = await fetch('http://localhost:5036/Posts/CreateComment', {
+	const response = await fetch('http://78.31.254.83:40080/Posts/CreateComment', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ const rate = async ({ request, params, locals }) => {
 	const id = params.id
 
 	// MAKE POST COMMENT REQUEST
-	const response = await fetch('http://localhost:5036/Posts/CreateRating', {
+	const response = await fetch('http://78.31.254.83:40080/Posts/CreateRating', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ const deletepost = async ({ params, locals }) => {
 	const id = params.id
 
 	// MAKE DELTE USER REQUEST
-	const response = await fetch(`http://localhost:5036/Posts/DeletePost?postid=${id}`, {
+	const response = await fetch(`http://78.31.254.83:40080/Posts/DeletePost?postid=${id}`, {
 		method: 'DELETE',
 		headers: {
 		  'Content-Type': 'application/json',

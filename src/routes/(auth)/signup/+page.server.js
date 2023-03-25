@@ -22,7 +22,7 @@ const signup = async ({ request }) => {
 	}
 
 	// MAKE POST SIGNUP REQUEST
-	const response = await fetch('http://localhost:5036/User/Create', {
+	const response = await fetch('http://78.31.254.83:40080/User/Create', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'

@@ -8,7 +8,7 @@ export const load = async ({ locals }) => {
 
 	let posts = [];
 
-	const res = await fetch(`http://localhost:5036/Posts/AllUsersposts`, {
+	const res = await fetch(`http://78.31.254.83:40080/Posts/AllUsersposts`, {
 		method: 'GET',
 		headers: {
 		  'Content-Type': 'application/json',

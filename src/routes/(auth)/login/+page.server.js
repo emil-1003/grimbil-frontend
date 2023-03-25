@@ -17,7 +17,7 @@ const login = async ({ cookies, request }) => {
 	}
 
 	// MAKE POST LOGIN REQUEST
-	const response = await fetch('http://localhost:5036/Auth/Login', {
+	const response = await fetch('http://78.31.254.83:40080/Auth/Login', {
 		method: 'POST',
 		headers: {
 		  'Content-Type': 'application/json'
