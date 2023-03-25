@@ -1,11 +1,6 @@
 import { redirect } from '@sveltejs/kit'
 
 export const load = async ({ params, locals }) => {
-	// redirect user if not logged in
-	if (!locals.user) {
-		throw redirect(302, '/')
-	}
-
 	let post = {};
     const id = params.id
 
@@ -17,11 +12,16 @@ export const load = async ({ params, locals }) => {
             post
         }
     } catch(error) {
-
+		console.log("øv",error)
     }
 }
 
 const comment = async ({ request, params, locals }) => {
+	// redirect user if not logged in
+	if (!locals.user) {
+		throw redirect(302, '/login')
+	}
+
 	const data = await request.formData()
 	const content = data.get('content')
 	const id = params.id
@@ -46,6 +46,11 @@ const comment = async ({ request, params, locals }) => {
 }
 
 const rate = async ({ request, params, locals }) => {
+	// redirect user if not logged in
+	if (!locals.user) {
+		throw redirect(302, '/login')
+	}
+
 	const data = await request.formData()
 	const rating = data.get('rating')
 	const id = params.id

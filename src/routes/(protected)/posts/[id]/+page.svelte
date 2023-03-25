@@ -64,15 +64,17 @@
                     <div class="flex items-center justify-between">
                         <h1 class="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">Description</h1>
 
-                        {#if $page.data.user.role == 1 || data.user.uid == data.post.user.userid}
-                        <form
-                        class=""
-                        action="?/deletepost"
-                        method="POST">
-                            <button type="submit" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
-                                Delete
-                            </button>
-                        </form>
+                        {#if $page.data.user}
+                            {#if $page.data.user.role == 1 || data.user.uid == data.post.user.userid}
+                            <form
+                            class=""
+                            action="?/deletepost"
+                            method="POST">
+                                <button type="submit" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                                    Delete
+                                </button>
+                            </form>
+                            {/if}
                         {/if}
 
                     </div>
