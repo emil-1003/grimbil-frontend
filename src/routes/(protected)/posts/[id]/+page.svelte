@@ -112,11 +112,11 @@
                             action="?/rate"
                             method="POST">
                             <div class="flex flex-row-reverse justify-center p-10">
-                                <input type="submit" on:click={() => (rating = 5)} class="text-5xl opacity-10 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
-                                <input type="submit" on:click={() => (rating = 4)} class="text-5xl opacity-10 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
-                                <input type="submit" on:click={() => (rating = 3)} class="text-5xl opacity-10 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
-                                <input type="submit" on:click={() => (rating = 2)} class="text-5xl opacity-10 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
-                                <input type="submit" on:click={() => (rating = 1)} class="text-5xl opacity-10 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
+                                <input type="submit" on:click={() => (rating = 5)} class="text-5xl opacity-50 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
+                                <input type="submit" on:click={() => (rating = 4)} class="text-5xl opacity-50 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
+                                <input type="submit" on:click={() => (rating = 3)} class="text-5xl opacity-50 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
+                                <input type="submit" on:click={() => (rating = 2)} class="text-5xl opacity-50 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
+                                <input type="submit" on:click={() => (rating = 1)} class="text-5xl opacity-50 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
                                 <input type="hidden" name="rating" id="rating" value={rating}>
                             </div> 
                         </form>
