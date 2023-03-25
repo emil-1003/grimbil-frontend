@@ -18,13 +18,13 @@
 						<img alt="profil" src="/user.jpeg" class="mx-auto object-cover rounded-full h-16 w-16 "/>
 					</div>
 					<div class="text-center">
-						<p class="text-2xl text-gray-800 dark:text-white">
+						<p class="text-2xl text-gray-800">
 							UserID: {user.userid}
 						</p>
-						<p class="text-xl font-light text-gray-500 dark:text-gray-200">
+						<p class="text-xl font-light text-gray-500">
 							Email: {user.useremail}
 						</p>
-						<p class="max-w-xs py-4 font-light text-gray-500 text-md dark:text-gray-400">
+						<p class="max-w-xs py-4 font-light text-gray-500 text-md">
 							Type: {user.usertype}
 						</p>
 					</div>

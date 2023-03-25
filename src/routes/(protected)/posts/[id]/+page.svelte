@@ -103,7 +103,7 @@
 
                         <div class="flex items-center">
                             {ratingString}
-                            <p class="ml-2 text-sm font-medium text-gray-500 dark:text-gray-400">{data.post.rating} out of 5</p>
+                            <p class="ml-2 text-sm font-medium text-gray-500">{data.post.rating} out of 5</p>
                         </div>
 
                         <form
