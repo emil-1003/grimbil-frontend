@@ -1,6 +1,4 @@
 <script>
-	import { enhance } from '$app/forms'
-
 	export let form
 </script>
 
@@ -16,7 +14,7 @@
 			</p>
 		</div>
 
-		<form action="?/signup" method="POST" use:enhance>
+		<form action="?/signup" method="POST">
 			<div class="mb-6">
 				<label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
 				<div class="relative">

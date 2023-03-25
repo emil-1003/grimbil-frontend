@@ -4,6 +4,23 @@
     export let data
 </script>
 
+<!--
+    use:enhance={() => {
+        return async ({ result }) => {
+            // rerun the `load` function for the page
+            // https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
+            invalidateAll()
+
+            // since we're customizing the default behaviour
+            // we don't want to reimplement what `use:enhance` does
+            // so we can use `applyResult` and pass the `result`
+            await applyAction(result)
+        }
+    }}
+
+    use:enhance
+-->
+
 <div class="bg-white">
     <div class="mx-auto max-w-2xl py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
         <div class="flex items-center justify-between">

@@ -1,6 +1,4 @@
 <script>
-    import { applyAction, enhance } from '$app/forms'
-	import { invalidateAll } from '$app/navigation'
     import { page } from '$app/stores'
 
     import Comment from "$lib/comment.svelte"
@@ -70,13 +68,7 @@
                         <form
                         class=""
                         action="?/deletepost"
-                        method="POST"
-                        use:enhance={() => {
-                            return async ({ result }) => {
-                                invalidateAll()
-                                await applyAction(result)
-                            }
-                        }}>
+                        method="POST">
                             <button type="submit" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
                                 Delete
                             </button>
@@ -116,19 +108,7 @@
 
                         <form
                             action="?/rate"
-                            method="POST"
-                                use:enhance={() => {
-                                    return async ({ result }) => {
-                                        // rerun the `load` function for the page
-                                        // https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
-                                        invalidateAll()
-                        
-                                        // since we're customizing the default behaviour
-                                        // we don't want to reimplement what `use:enhance` does
-                                        // so we can use `applyResult` and pass the `result`
-                                        await applyAction(result)
-                                    }
-                        }}>
+                            method="POST">
                             <div class="flex flex-row-reverse justify-center p-10">
                                 <input type="submit" on:click={() => (rating = 5)} class="text-5xl opacity-10 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
                                 <input type="submit" on:click={() => (rating = 4)} class="text-5xl opacity-10 peer peer-hover:opacity-100 hover:opacity-100 mx-2" value="🤮">
@@ -141,22 +121,7 @@
 
                         <div class="mt-4 mb-4 bg-white shadow overflow-hidden sm:rounded-md">
                             <div class="px-4 py-5 sm:px-6">
-                                <form
-                                action="?/comment"
-                                method="POST"
-                                use:enhance={() => {
-                                    return async ({ result }) => {
-                                        // rerun the `load` function for the page
-                                        // https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
-                                        invalidateAll()
-                        
-                                        // since we're customizing the default behaviour
-                                        // we don't want to reimplement what `use:enhance` does
-                                        // so we can use `applyResult` and pass the `result`
-                                        await applyAction(result)
-                                    }
-                                }}
-                                >
+                                <form action="?/comment" method="POST">
                                     <div class="mb-6">
                                         <label for="comment" class="block mb-2 text-sm font-medium text-gray-900">Write a comment</label>
                                         <textarea id="content" name="content" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Write a comment" required />

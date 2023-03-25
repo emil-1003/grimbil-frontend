@@ -1,7 +1,4 @@
 <script>
-    import { applyAction, enhance } from '$app/forms'
-	import { invalidateAll } from '$app/navigation'
-
 	export let form
 
     let fileInput;
@@ -28,19 +25,7 @@
         </div>
         <form
         action="?/create"
-		method="POST"
-		use:enhance={() => {
-			return async ({ result }) => {
-				// rerun the `load` function for the page
-				// https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
-				invalidateAll()
-
-				// since we're customizing the default behaviour
-				// we don't want to reimplement what `use:enhance` does
-				// so we can use `applyResult` and pass the `result`
-				await applyAction(result)
-			}
-		}}>
+		method="POST">
             <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
                     <label for="make" class="block mb-2 text-sm font-medium text-gray-900">Car Make</label>

@@ -1,7 +1,4 @@
 <script>
-	import { applyAction, enhance } from '$app/forms'
-	import { invalidateAll } from '$app/navigation'
-
 	export let data
 </script>
 
@@ -35,16 +32,7 @@
 			</div>
 			<div class="px-4 py-3 rounded-b-lg bg-gray-50 sm:px-6 sm:flex justify-center">
 
-				<form
-				class=""
-				action="?/deleteuser"
-				method="POST"
-				use:enhance={() => {
-					return async ({ result }) => {
-						invalidateAll()
-						await applyAction(result)
-					}
-				}}>
+				<form action="?/deleteuser" method="POST">
 					<input type="hidden" name="userid" id="userid" value={user.userid}>
 					<button type="submit" class="w-full px-4 py-2 text-base font-medium text-white bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
 						Delete
@@ -52,16 +40,7 @@
 				</form>
 
 				{#if user.usertype != 2}
-					<form
-					class=""
-					action="?/blockuser"
-					method="POST"
-					use:enhance={() => {
-						return async ({ result }) => {
-							invalidateAll()
-							await applyAction(result)
-						}
-					}}>
+					<form action="?/blockuser" method="POST">
 						<input type="hidden" name="userid" id="userid" value={user.userid}>
 						<button type="submit" class="w-full px-4 py-2 text-base font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
 							Block
@@ -70,16 +49,7 @@
 				{/if}
 
 				{#if user.usertype == 2}
-					<form
-					class=""
-					action="?/unblockuser"
-					method="POST"
-					use:enhance={() => {
-						return async ({ result }) => {
-							invalidateAll()
-							await applyAction(result)
-						}
-					}}>
+					<form action="?/unblockuser" method="POST">
 						<input type="hidden" name="userid" id="userid" value={user.userid}>
 						<button type="submit" class="inline-flex justify-center w-full px-4 py-2 text-base font-medium text-white bg-blue-600 border border-transparent rounded-md shadow-sm hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 sm:ml-3 sm:w-auto sm:text-sm">
 							Unblock

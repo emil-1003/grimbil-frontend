@@ -1,7 +1,4 @@
 <script>
-	import { applyAction, enhance } from '$app/forms'
-	import { invalidateAll } from '$app/navigation'
-
 	export let form
 </script>
 
@@ -17,22 +14,7 @@
 			</p>
 		</div>
 
-		<form
-		action="?/login"
-		method="POST"
-		use:enhance={() => {
-			return async ({ result }) => {
-				// rerun the `load` function for the page
-				// https://kit.svelte.dev/docs/modules#$app-navigation-invalidateall
-				invalidateAll()
-
-				// since we're customizing the default behaviour
-				// we don't want to reimplement what `use:enhance` does
-				// so we can use `applyResult` and pass the `result`
-				await applyAction(result)
-			}
-		}}
-		>
+		<form action="?/login" method="POST">
 			<div class="mb-6">
 				<label for="email" class="block mb-2 text-sm font-medium text-gray-900">Email</label>
 				<div class="relative">

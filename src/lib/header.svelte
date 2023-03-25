@@ -1,6 +1,4 @@
 <script>
-    import { applyAction, enhance } from '$app/forms'
-	import { invalidateAll } from '$app/navigation'
 	import { page } from '$app/stores'
 
     let isMenuOpen = false
@@ -54,17 +52,7 @@
                             <a href="/posts" on:click={() => (current = 5)} class={`${current === 5 ? 'text-blue-700' : 'text-gray-700'} font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0`}>Posts</a>
                         </li>
                         <li on:click={() => (isMenuOpen = false)}>
-                            <form
-                                class="logout"
-                                action="/logout"
-                                method="POST"
-                                use:enhance={() => {
-                                    return async ({ result }) => {
-                                        invalidateAll()
-                                        await applyAction(result)
-                                    }
-                                }}
-                            >
+                            <form action="/logout" method="POST">
                                 <button type="submit" on:click={() => (current = 0)} class="text-gray-700 font-extrabold block py-2 pl-3 pr-4 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0">Log out</button>
                             </form>
                         </li>
