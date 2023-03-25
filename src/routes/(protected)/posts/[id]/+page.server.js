@@ -4,16 +4,12 @@ export const load = async ({ params, locals }) => {
 	let post = {};
     const id = params.id
 
-    try {
-        const res = await fetch(`http://78.31.254.83:40080/Posts/GetPost?postid=${id}`);
-        post = await res.json();
+	const res = await fetch(`http://78.31.254.83:40080/Posts/GetPost?postid=${id}`);
+	post = await res.json();
 
-        return {
-            post
-        }
-    } catch(error) {
-		console.log("øv",error)
-    }
+	return {
+		post
+	}
 }
 
 const comment = async ({ request, params, locals }) => {
