@@ -143,7 +143,7 @@
                         </div>
 
                         {#each data.post.comments as comment}
-                            <Comment name={comment.userid} date="10.10.2002" comment={comment.comment1} />
+                            <Comment name={comment.useremail} date="10.10.2002" comment={comment.comment1} />
                         {/each}
 
                     </div>
