@@ -29,36 +29,36 @@
             <div class="grid gap-6 mb-6 md:grid-cols-2">
                 <div>
                     <label for="make" class="block mb-2 text-sm font-medium text-gray-900">Car Make</label>
-                    <input type="text" id="make" name="make" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car make">
+                    <input type="text" id="make" name="make" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car make" required>
                 </div>
                 <div>
                     <label for="model" class="block mb-2 text-sm font-medium text-gray-900">Car Model</label>
-                    <input type="text" id="model" name="model" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car model">
+                    <input type="text" id="model" name="model" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car model" required>
                 </div>
                 <div>
                     <label for="year" class="block mb-2 text-sm font-medium text-gray-900">Car Year</label>
-                    <input type="number" min="1900" max="2024" step="1" id="year" name="year" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car year">
+                    <input type="number" min="1900" max="2024" step="1" id="year" name="year" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car year" required>
                 </div>
                 <div>
                     <label for="mileage" class="block mb-2 text-sm font-medium text-gray-900">Car Mileage</label>
-                    <input type="number" min="0" step="1" id="mileage" name="mileage" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car mileage">
+                    <input type="number" min="0" step="1" id="mileage" name="mileage" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car mileage" required>
                 </div>
                 <div>
                     <label for="hp" class="block mb-2 text-sm font-medium text-gray-900">Car Hoursepower</label>
-                    <input type="number" min="0" max="2000" step="1" id="hp" name="hp" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car hoursepower">
+                    <input type="number" min="0" max="2000" step="1" id="hp" name="hp" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car hoursepower" required>
                 </div>
                 <div>
                     <label for="plate" class="block mb-2 text-sm font-medium text-gray-900">License plate</label>
-                    <input type="text" id="plate" name="plate" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car hoursepower">
+                    <input type="text" id="plate" name="plate" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter car hoursepower" required>
                 </div>
             </div>
             <div class="mb-6">
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900">Description</label>
-                <textarea id="description" name="description" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter your text here"></textarea>
+                <textarea id="description" name="description" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5" placeholder="Enter your text here" required></textarea>
             </div>
             <div class="mb-6">
                 <label for="images" class="block mb-2 text-sm font-medium text-gray-900">Upload Images</label>
-                <input type="file" accept="image/*" bind:files bind:this={fileInput} on:change={() => getBase64(files)} class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding py-[0.32rem] px-3 text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[margin-inline-end:0.75rem] file:[border-inline-end-width:1px] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-[0_0_0_1px] focus:shadow-primary focus:outline-none" multiple >
+                <input type="file" accept="image/*" bind:files bind:this={fileInput} on:change={() => getBase64(files)} class="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding py-[0.32rem] px-3 text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[margin-inline-end:0.75rem] file:[border-inline-end-width:1px] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-[0_0_0_1px] focus:shadow-primary focus:outline-none" multiple required>
                 <input type="hidden" name="base64" value={base64}>
             </div>
 
